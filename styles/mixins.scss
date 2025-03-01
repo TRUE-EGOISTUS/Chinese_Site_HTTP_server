@@ -1,0 +1,35 @@
+// Плавные переходы
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+  transition: $property $duration $ease;
+}
+
+// Тени
+@mixin shadow($level) {
+  @if $level == "light" {
+    box-shadow: $box-shadow-light;
+  } @else if $level == "heavy" {
+    box-shadow: $box-shadow-heavy;
+  }
+}
+
+// Масштабирование при наведении
+@mixin scale-hover($scale: 1.05) {
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+// Градиентный текст
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Анимация при наведении (для карточек и кнопок)
+@mixin hover-effect {
+  &:hover {
+    transform: translateY(-10px);
+    @include shadow("heavy");
+  }
+}

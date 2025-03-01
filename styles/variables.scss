@@ -1,0 +1,21 @@
+// Основные цвета
+$primary: #E62129; // Красный (цвет флага Китая)
+$secondary: #FFD700; // Золотой
+$accent: #FFFFFF; // Белый
+$background: #F5F5F5; // Светло-серый
+$text-color: #FFFFFF; // Темно-серый
+
+// Градиенты фона
+$background-gradient: linear-gradient(135deg, $primary, darken($primary, 10%));
+$background-dark: linear-gradient(135deg, darken($primary, 20%), $primary);
+
+// Тени
+$box-shadow-light: 0px 4px 6px rgba(0, 0, 0, 0.1);
+$box-shadow-heavy: 0px 8px 15px rgba(0, 0, 0, 0.2);
+
+// Шрифты
+$font-primary: 'Noto Serif SC', serif; // Шрифт с китайским акцентом
+$font-secondary: 'Roboto', sans-serif;
+
+// Радиус кнопок
+$btn-border-radius: 8px;

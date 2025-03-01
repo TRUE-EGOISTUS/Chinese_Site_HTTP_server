@@ -1,0 +1,5 @@
+// _color.scss
+h1 {
+  @include gradient-text($background-dark);
+  margin-bottom: 20px;
+}

@@ -1,0 +1,159 @@
+@import 'variables';
+@import 'mixins';
+
+// Подключаем Bootstrap (видит наши переменные)
+@import "../node_modules/bootstrap/scss/bootstrap";
+// Импортируем цветовые стили
+@import 'color';
+
+// Глобальные стили
+body {
+  font-family: $font-primary;
+  background: $background-gradient;
+  background-attachment: fixed;
+  color: $text-color; // Основной цвет текста
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Улучшенный фон с анимацией частиц
+.background-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: moveParticles 8s infinite linear;
+  opacity: 0.7;
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+// Кастомные стили для кнопок
+.btn-custom, .btn-primary {
+  @include transition(background-color, 0.3s, ease);
+  @include shadow("light");
+  background-color: $primary; // Красный фон
+  color: $accent; // Белый текст
+  padding: 10px 20px;
+  border-radius: $btn-border-radius;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+
+  &:hover {
+    background-color: $secondary; // Желтый фон при наведении
+    color: $primary; // Красный текст при наведении
+    @include shadow("heavy");
+  }
+}
+
+// Стили для карточки товара
+.card {
+  @include transition(transform, 0.3s, ease);
+  @include hover-effect;
+  border: none;
+  border-radius: $btn-border-radius;
+  overflow: hidden;
+  background: $accent;
+  box-shadow: $box-shadow-light;
+
+  .card-img-top {
+    border-radius: $btn-border-radius $btn-border-radius 0 0;
+    transition: transform 0.3s ease;
+    height: 400px;
+    width:450px;
+  }
+
+  .card-body {
+    padding: 20px;
+    text-align: center;
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: $primary;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: $text-color; // Цвет текста совпадает с основным
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      @include transition(background-color, 0.3s, ease);
+      background-color: $primary;
+      border: none;
+      padding: 10px 20px;
+      border-radius: $btn-border-radius;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $secondary; // Желтый фон при наведении
+        color: $primary; // Красный текст при наведении
+      }
+    }
+  }
+
+  &:hover {
+    .card-img-top {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Параллакс-эффект
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  margin: 20px 0;
+}
+
+// Лозунг
+.slogan {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $accent;
+  margin: 40px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+// Звезды (для декора)
+.star {
+  color: $secondary;
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+
+// Стили для текстовых блоков
+.text-block {
+  color: $text-color; // Цвет текста совпадает с основным
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
