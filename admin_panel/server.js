@@ -8,6 +8,8 @@ app.use(express.json());
 
 // Разрешаем отдавать `admin.html`
 app.use(express.static(path.join(__dirname)));
+app.use('/assets', express.static(path.join(__dirname, '../frontend/assets')));
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 

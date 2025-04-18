@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 3000;
 // Отдаем статику из папки frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 app.use('/assets', express.static(path.join(__dirname, '../frontend/assets')));
-
+// Добавляем обработку корневого пути assets
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
 
 // API для получения списка товаров
 app.get('/products', (req, res) => {
@@ -28,6 +29,11 @@ app.get('/products', (req, res) => {
       res.status(500).json({ error: 'Ошибка парсинга JSON' });
     }
   });
+});
+
+// Отдаём index.html при открытии /
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // Обработка 404 (если ресурс не найден)

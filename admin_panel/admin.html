@@ -92,6 +92,11 @@
       loadProducts();
     });
 
+    function getImageSrc(image) {
+      if (image.startsWith('http')) return image;
+      return image; // Убираем добавление слэша, так как он уже есть в пути
+    }
+
     function loadProducts() {
       fetch('http://localhost:8080/products')
         .then(response => response.json())
@@ -103,7 +108,7 @@
             col.className = 'col-md-6';
             col.innerHTML = `
               <div class="card" data-aos="fade-up">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.onerror=null; this.src='/assets/default.jpg';">
+                <img src="${getImageSrc(product.image)}" class="card-img-top" alt="${product.name}" onerror="this.onerror=null; this.src='/assets/default.jpg';">
                 <div class="card-body">
                   <h5 class="card-title">${product.name}</h5>
                   <p class="card-text">${product.description}</p>

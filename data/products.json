@@ -8,7 +8,7 @@
       "Птицы",
       "Акции"
     ],
-    "image": "/assets/1639040412_65-pofoto-club-p-foto-ptichek-vorobev-68.jpg"
+    "image": "assets/1639040412_65-pofoto-club-p-foto-ptichek-vorobev-68.jpg"
   },
   {
     "id": 2,
@@ -18,7 +18,7 @@
     "categories": [
       "Оборудование"
     ],
-    "image": "/assets/1621510512_kitai-2.jpg"
+    "image": "assets/1621510512_kitai-2.jpg"
   },
   {
     "id": 3,
@@ -28,7 +28,7 @@
     "categories": [
       "Услуги"
     ],
-    "image": "/assets/scale_1200.png"
+    "image": "assets/scale_1200.png"
   },
   {
     "id": 4,
@@ -38,7 +38,7 @@
     "categories": [
       "Символика"
     ],
-    "image": "/assets/red_star.jpg"
+    "image": "assets/Chinese_81_star.png"
   },
   {
     "id": 5,
@@ -48,7 +48,7 @@
     "categories": [
       "Символика"
     ],
-    "image": "/assets/revolution_flag.jpg"
+    "image": "assets/flag_china.png"
   },
   {
     "id": 6,
@@ -58,6 +58,16 @@
     "categories": [
       "Техника"
     ],
-    "image": "/assets/narodny_tractor.jpg"
+    "image": "assets/traktor.png"
+  },
+  {
+    "name": "Тайвань",
+    "price": 99999,
+    "description": "Провинция Китая которая нам не нужна",
+    "categories": [
+      "Услуги"
+    ],
+    "image": "assets/Flag_of_the_Republic_of_China_%28alternate_shade%29.png",
+    "id": 7
   }
 ]
